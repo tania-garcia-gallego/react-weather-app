@@ -1,21 +1,25 @@
-.card{
-    background-color: darkslategray;
-    color: white;
+.card {
+    background-color: #2d464c;
+    color: whitesmoke;
 
-}
+} 
  li {
      list-style: none;
  }
  img{
      margin-top: 20px;
      border-radius: 5px;
-
  }
 
- .WeatherDescription{
+ .WeatherDescription {
      font-size: 12px;
  }
 
  .WeatherData {
-     padding: 3px;
+     padding: 5px;
+     
+ }
+
+.WeatherDataUl {
+     margin: 15px;
  }

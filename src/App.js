@@ -1,6 +1,7 @@
 
 import './App.css';
 import Weather from "./Weather.js";
+import Footer from "./Footer.js";
 
 
 function App() {
@@ -9,9 +10,8 @@ function App() {
       <div className="container">
 
         <Weather />
-        <footer> <a href="https://github.com/tania-garcia-gallego">
-          Open source code
-        </a>  by Tania Garcia Gallego 👩‍💻</footer>
+        <Footer />
+
       </div>
     </div >
   );

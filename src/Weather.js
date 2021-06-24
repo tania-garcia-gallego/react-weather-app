@@ -19,11 +19,11 @@ export default function Weather() {
                             </ul>
                         </div>
                         <div className="col-6">
-                            <ul>
-                                <li className="WeatherData">Max temperature</li>
-                                <li className="WeatherData">Min Temperature</li>
-                                <li className="WeatherData">Wind Speed</li>
-                                <li className="WeatherData">Humidity</li>
+                            <ul className="WeatherDataUl">
+                                <li className="WeatherData MaxTemp">Max temperature</li>
+                                <li className="WeatherData MinTemp">Min Temperature</li>
+                                <li className="WeatherData WindSpeed">Wind Speed</li>
+                                <li className="WeatherData Humidity">Humidity</li>
                             </ul>
                         </div>
                     </div>
