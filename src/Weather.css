@@ -1,0 +1,21 @@
+.card{
+    background-color: darkslategray;
+    color: white;
+
+}
+ li {
+     list-style: none;
+ }
+ img{
+     margin-top: 20px;
+     border-radius: 5px;
+
+ }
+
+ .WeatherDescription{
+     font-size: 12px;
+ }
+
+ .WeatherData {
+     padding: 3px;
+ }
