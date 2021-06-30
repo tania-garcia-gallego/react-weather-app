@@ -1,5 +1,5 @@
 .card {
-    background-color: #2d464c;
+    background-color: #3d5b59;
     color: whitesmoke;
 
 } 
@@ -23,3 +23,23 @@
 .WeatherDataUl {
      margin: 15px;
  }
+
+.enterCity {
+    border-radius: 5px;
+    border: 1px;
+    padding: 5px;
+}
+
+.search {
+border-radius: 5px;
+border: 1px;
+padding: 5px;
+margin: 10px;
+padding-right: 50px;
+background-color: #FCB5AC;
+
+}
+
+form {
+    margin: 10px;
+}
