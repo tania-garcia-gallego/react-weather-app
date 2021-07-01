@@ -14,6 +14,8 @@ export default function Weather() {
             maxTemp: Math.round(response.data.main.temp_max),
             minTemp: Math.round(response.data.main.temp_min),
             humidity: response.data.main.humidity,
+            city: response.data.name,
+            description: response.data.weather[0].description,
         })
         setReady(true);
     }
@@ -30,7 +32,7 @@ export default function Weather() {
 
                         </form>
                     </div>
-                    <h3 className="card-title">Valencia</h3>
+                    <h3 className="card-title">{weatherData.city}</h3>
                     <h5 className="card-subtitle">{weatherData.temperature}°C</h5>
                     <div className="row">
                         <div className="col-6">
@@ -39,7 +41,7 @@ export default function Weather() {
                                     <img width="180" src="https://media.giphy.com/media/LVsi0kq0KNet3vDPLa/giphy.gif" alt="weather gif"></img>
                                 </li>
 
-                                <li className="WeatherDescription">Weather description</li>
+                                <li className="WeatherDescription">{weatherData.description}</li>
                             </ul>
                         </div>
                         <div className="col-6">
