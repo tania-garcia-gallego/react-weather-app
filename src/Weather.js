@@ -4,7 +4,8 @@ import "./Weather.css";
 import Forecast from "./Forecast.js";
 import WeatherData from "./WeatherData.js";
 
-export default function Weather() {
+export default function Weather(props) {
+    const [ city, setCity] = useState(props.defaultCity);
     const [ready, setReady] = useState(false);
     const [ weatherData , setWeatherData] = useState({});
     function handleResponse(response) {
@@ -17,11 +18,23 @@ export default function Weather() {
             humidity: response.data.main.humidity,
             city: response.data.name,
             description: response.data.weather[0].description,
-            
-            
         })
-        
         setReady(true);
+    }
+
+    function search(){
+         const apiKey = "751305c75f9526727cdf4f36e45a4e75";
+         let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+         axios.get(apiUrl).then(handleResponse);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        search();
+    }
+
+    function handleCity(event) {
+        setCity(event.target.value);
     }
 
     if(ready) {
@@ -30,8 +43,8 @@ export default function Weather() {
             <div className="card">
                 <div className="card-body">
                     <div className="row">
-                        <form>
-                            <input type="text" placeholder="Enter a city" className="enterCity" />
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" placeholder="Enter a city" className="enterCity" onChange={handleCity}/>
                             <input type="submit" value="Search" className="search" />
 
                         </form>
@@ -50,10 +63,7 @@ export default function Weather() {
         </div>
     )
     } else {
-        const apiKey = "751305c75f9526727cdf4f36e45a4e75";
-    let city = "Valencia";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+       search();
     return"Our weather elves are working on your request, one moment please";
     }
 
