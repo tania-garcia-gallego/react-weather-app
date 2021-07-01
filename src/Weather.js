@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState }from "react";
 import axios from "axios";
 import "./Weather.css";
 import Forecast from "./Forecast.js";
 
 export default function Weather() {
-    return (
+    const [ready, setReady] = useState(false);
+    const [ temperature , setTemperature] = useState(null);
+    function handleResponse(response) {
+        console.log(response.data);
+        setTemperature(Math.round(response.data.main.temp));
+        setReady(true);
+    }
+
+    if(ready) {
+ return (
         <div className="Weather container">
             <div className="card">
                 <div className="card-body">
@@ -16,7 +25,7 @@ export default function Weather() {
                         </form>
                     </div>
                     <h3 className="card-title">Valencia</h3>
-                    <h5 className="card-subtitle">22°C</h5>
+                    <h5 className="card-subtitle">{temperature}°C</h5>
                     <div className="row">
                         <div className="col-6">
                             <ul>
@@ -46,4 +55,14 @@ export default function Weather() {
             </div>
         </div>
     )
+    } else {
+        const apiKey = "751305c75f9526727cdf4f36e45a4e75";
+    let city = "Valencia";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+    return"Our weather elves are working on your request, one moment please";
+    }
+
+  
+   
 }
