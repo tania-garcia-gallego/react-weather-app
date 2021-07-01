@@ -5,10 +5,16 @@ import Forecast from "./Forecast.js";
 
 export default function Weather() {
     const [ready, setReady] = useState(false);
-    const [ temperature , setTemperature] = useState(null);
+    const [ weatherData , setWeatherData] = useState({});
     function handleResponse(response) {
         console.log(response.data);
-        setTemperature(Math.round(response.data.main.temp));
+        setWeatherData({
+            temperature: Math.round(response.data.main.temp),
+            wind: Math.round(response.data.wind.speed),
+            maxTemp: Math.round(response.data.main.temp_max),
+            minTemp: Math.round(response.data.main.temp_min),
+            humidity: response.data.main.humidity,
+        })
         setReady(true);
     }
 
@@ -25,7 +31,7 @@ export default function Weather() {
                         </form>
                     </div>
                     <h3 className="card-title">Valencia</h3>
-                    <h5 className="card-subtitle">{temperature}°C</h5>
+                    <h5 className="card-subtitle">{weatherData.temperature}°C</h5>
                     <div className="row">
                         <div className="col-6">
                             <ul>
@@ -38,10 +44,10 @@ export default function Weather() {
                         </div>
                         <div className="col-6">
                             <ul className="WeatherDataUl">
-                                <li className="WeatherData MaxTemp">Max temperature</li>
-                                <li className="WeatherData MinTemp">Min Temperature</li>
-                                <li className="WeatherData WindSpeed">Wind Speed</li>
-                                <li className="WeatherData Humidity">Humidity</li>
+                                <li className="WeatherData MaxTemp">Temp Max: {weatherData.maxTemp}°C</li>
+                                <li className="WeatherData MinTemp">Temp Min: {weatherData.minTemp}°C</li>
+                                <li className="WeatherData WindSpeed">Wind Speed: {weatherData.wind} km/h</li>
+                                <li className="WeatherData Humidity">Humidity: {weatherData.humidity}%</li>
                             </ul>
                         </div>
                     </div>
