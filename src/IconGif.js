@@ -22,6 +22,6 @@ export default function IconGif(props) {
         "50n" : "https://media.giphy.com/media/McDhCoTyRyLiE/giphy.gif",
     };
     let url = gifMap[props.code];
-   
+    if (url === undefined) {url="https://media.giphy.com/media/UHAYP0FxJOmFBuOiC2/giphy.gif"} 
     return (<img src={url} alt="weather gif"  width="180"/>);
 }
