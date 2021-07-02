@@ -1,4 +1,5 @@
 import React from "react";
+import IconGif from "./IconGif.js";
 
 export default function WeatherData(props) {
 
@@ -12,7 +13,8 @@ export default function WeatherData(props) {
                         <div className="col-6">
                             <ul>
                                 <li>
-                                    <img width="180" src="https://media.giphy.com/media/LVsi0kq0KNet3vDPLa/giphy.gif" alt="weather gif"></img>
+                                    <IconGif  code={props.data.icon} />
+                                    
                                 </li>
 
                                 <li className="text-capitalize WeatherDescription">{props.data.description}</li>
