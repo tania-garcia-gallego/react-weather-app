@@ -19,6 +19,7 @@ export default function Weather(props) {
             city: response.data.name,
             description: response.data.weather[0].description,
             icon: response.data.weather[0].icon,
+            coordinates: response.data.coord,
         })
         setReady(true);
     }
@@ -54,7 +55,7 @@ export default function Weather(props) {
                     <WeatherData data={weatherData} />
                     
                     <div className="row">
-                        <Forecast />
+                        <Forecast coordinates={weatherData.coordinates}/>
 
                     </div>
 

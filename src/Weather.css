@@ -1,45 +1,44 @@
 .card {
-    background-color: #3d5b59;
-    color: whitesmoke;
+  background-color: #3d5b59;
+  color: whitesmoke;
+  width: full;
+  margin: 10px;
+}
+li {
+  list-style: none;
+}
+img {
+  margin-top: 20px;
+  border-radius: 5px;
+}
 
-} 
- li {
-     list-style: none;
- }
- img{
-     margin-top: 20px;
-     border-radius: 5px;
- }
+.WeatherDescription {
+  font-size: 12px;
+}
 
- .WeatherDescription {
-     font-size: 12px;
- }
-
- .WeatherData {
-     padding: 5px;
-     
- }
+.WeatherData {
+  padding: 5px;
+}
 
 .WeatherDataUl {
-     margin: 15px;
- }
+  margin: 15px;
+}
 
 .enterCity {
-    border-radius: 5px;
-    border: 1px;
-    padding: 5px;
+  border-radius: 5px;
+  border: 1px;
+  padding: 5px;
 }
 
 .search {
-border-radius: 5px;
-border: 1px;
-padding: 5px;
-margin: 10px;
-padding-right: 50px;
-background-color: #FCB5AC;
-
+  border-radius: 5px;
+  border: 1px;
+  padding: 5px;
+  margin: 10px;
+  padding-right: 50px;
+  background-color: #fcb5ac;
 }
 
 form {
-    margin: 10px;
+  margin: 10px;
 }
