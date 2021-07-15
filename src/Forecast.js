@@ -18,10 +18,13 @@ export default function Forecast(props) {
 
     if(forecastLoaded) {
          return (
-
-            <ForecastDay data={forecastData[1]}/>
+<div className="row">
+    {forecastData.map(function(dailyForecast, index){
+        return (<ForecastDay data={dailyForecast}/>)
+    })}
             
-        
+            
+        </div>
     
     )
     }

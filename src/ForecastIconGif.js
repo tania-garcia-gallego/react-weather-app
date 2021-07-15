@@ -1,4 +1,5 @@
 import React from "react";
+import "./ForecastIconGif.css";
 
 export default function ForecastIconGif(props){
      const iconGifMap = {
@@ -23,6 +24,6 @@ export default function ForecastIconGif(props){
     };
     let url = iconGifMap[props.code];
     if (url === undefined) {url="https://media.giphy.com/media/UHAYP0FxJOmFBuOiC2/giphy.gif"} 
-    return (<img src={url} alt="weather gif" width="100" className="card-img"/>);
+    return (<img src={url} alt="weather gif" width="50" className="card-img"/>);
 
 }
