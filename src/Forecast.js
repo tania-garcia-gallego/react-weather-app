@@ -1,4 +1,4 @@
-import { cleanup } from "@testing-library/react";
+
 import axios from "axios";
 import React , { useState , useEffect } from "react";
 
@@ -27,7 +27,8 @@ export default function Forecast(props) {
     
     {forecastData.map(function(dailyForecast, index){
         if (index < 6) {
-        return (<ForecastDay data={dailyForecast}/>)}
+        return <ForecastDay data={dailyForecast}/>}
+        return null;
     })}
       
         </div>
