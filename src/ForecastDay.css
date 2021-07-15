@@ -1,0 +1,19 @@
+.forecast {
+  display: inline;
+  text-align: center;
+  background-color: #b99095;
+  width: min-content;
+  height: 155px;
+  margin-left: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+span {
+  font-size: 12px;
+  padding: 2px;
+  background-color: #b99095;
+}
+
+.forecastDay {
+  font-size: 14px;
+}

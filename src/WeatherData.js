@@ -13,7 +13,7 @@ export default function WeatherData(props) {
                         <div className="col-6">
                             <ul>
                                 <li>
-                                    <IconGif  code={props.data.icon} />
+                                    <IconGif  code={props.data.icon}/>
                                     
                                 </li>
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function IconGif(props) {
-    const gifMap = {
+export default function ForecastIconGif(props){
+     const iconGifMap = {
         "01d" : "https://media.giphy.com/media/LVsi0kq0KNet3vDPLa/giphy.gif",
         "01n" : "https://media.giphy.com/media/FlodpfQUBSp20/giphy.gif",
         "02d" : "https://media.giphy.com/media/G1T5M0qT6ZJlu/giphy.gif",
@@ -21,7 +21,8 @@ export default function IconGif(props) {
         "50d" : "https://media.giphy.com/media/McDhCoTyRyLiE/giphy.gif",
         "50n" : "https://media.giphy.com/media/McDhCoTyRyLiE/giphy.gif",
     };
-    let url = gifMap[props.code];
+    let url = iconGifMap[props.code];
     if (url === undefined) {url="https://media.giphy.com/media/UHAYP0FxJOmFBuOiC2/giphy.gif"} 
-    return (<img src={url} alt="weather gif" width="180" />);
+    return (<img src={url} alt="weather gif" width="100" className="card-img"/>);
+
 }
